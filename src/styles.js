@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
     appBar: {
         borderRadius: 15,
         margin: '30px 0',
@@ -14,5 +14,18 @@ export default makeStyles(() => ({
       },
       image: {
         marginLeft: '15px',
+        height: '60px',
       },
+      [theme.breakpoints.down('xs')]: {
+        formContainer: {
+          flexDirection: "column-reverse"
+        },
+        heading: {
+          fontSize: 'xxx-large'
+        },
+        image: {
+          height: '40px'
+        }
+
+      }
 }));
