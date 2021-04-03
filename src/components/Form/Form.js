@@ -15,16 +15,23 @@ const Form = ({ currentId, setCurrentId}) => {
     });
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
     const dispatch = useDispatch();
+    const classes = useStyles();
 
     useEffect(() => {
         if(post) setPostData(post);
     }, [post])
+
+    const clear = () => {
+        setCurrentId(null);
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    }
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if(currentId) {
             dispatch(updatePost(currentId, postData));
+            
         }else {
             dispatch(createPost(postData));
         }
@@ -32,13 +39,6 @@ const Form = ({ currentId, setCurrentId}) => {
         
     }
 
-    const clear = () => {
-        setCurrentId(null);
-        setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''});
-
-    }
-
-    const classes = useStyles();
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" onValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
@@ -60,7 +60,7 @@ const Form = ({ currentId, setCurrentId}) => {
                     <FileBase 
                         type="file"
                         multiple={false}
-                        onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })} 
+                        onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} 
                     />
                 </div>
 

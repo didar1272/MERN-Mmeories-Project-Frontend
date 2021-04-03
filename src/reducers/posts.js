@@ -1,4 +1,5 @@
 import { FETCH_ALL, DELETE, CREATE, UPDATE, LIKE } from "../constants/actionTypes";
+
 const posts = (posts = [], action) => {
     switch(action.type) {
         case DELETE: 
