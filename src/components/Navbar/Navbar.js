@@ -4,7 +4,7 @@ import { AppBar, Typography, Toolbar, Avatar, Button } from "@material-ui/core";
 import useStyles from './styles';
 import memories from '../../images/shining-circle.png';
 
-export const Navbar = () => {
+const Navbar = () => {
 
     const classes = useStyles();
     const user = null;
@@ -12,7 +12,7 @@ export const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
-                    <Typography component={Link} to='/' className={classes.heading} variant="h2" align="center">Memories</Typography>
+                    <Typography component={Link} to='/' className={classes.heading} variant="h2" align="center">Memories</Typography> 
                     <img className={classes.image} src={memories} alt="icon" />
             </div>
             <Toolbar className={classes.toolbar}>
@@ -23,9 +23,11 @@ export const Navbar = () => {
                         <Button variant="contained" className={classes.logout} color="secondary">Logout</Button>
                     </div>
                 ) : (
-                    <Button component={Link} to="/auth" variant="contained" color='primary'>Sign In</Button>
+                    <Button component={Link} to='/auth' variant="contained" color='primary'>Sign In</Button>
                 )}
             </Toolbar>
         </AppBar>
     );
 }
+
+export default Navbar;

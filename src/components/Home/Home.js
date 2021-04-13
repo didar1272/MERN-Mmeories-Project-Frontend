@@ -6,7 +6,7 @@ import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import { getPosts } from "../../actions/posts";
 
-export const Home = () => {
+const Home = () => {
 
     const [currentId, setCurrentId] = useState(null); // for editing or updating the form
     const dispatch = useDispatch(); //this is a hook
@@ -30,3 +30,5 @@ export const Home = () => {
         </Grow>
     )
 }
+
+export default Home;
