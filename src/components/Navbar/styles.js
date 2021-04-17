@@ -41,4 +41,44 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
+  [theme.breakpoints.down('sm')]: {
+    image: {
+      height: '25px',
+      marginLeft: '5px',
+      marginTop: '4px'
+    },
+    appBar: {
+      margin: '10px 0px',
+      padding: '10px 5px',
+    },
+    heading: {
+      fontSize: '25px',
+      marginLeft: '10px'
+    },
+    userName: {
+      display: 'none',
+      
+    },
+    profile: {
+      width: '130px',
+    },
+    brandContainer: {
+
+    },
+    purple: {
+      marginTop: '5px',
+      marginLeft: '25px',
+      height: '30px',
+      width: '30px',
+      
+    },
+    logout: {
+      marginLeft: '5px',
+      marginTop: '4px',
+      fontSize: '10px',
+      height: '30px',
+      width: '30px',
+    }
+
+  }
 }));

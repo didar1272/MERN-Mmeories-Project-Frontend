@@ -16,16 +16,5 @@ export default makeStyles((theme) => ({
         marginLeft: '15px',
         height: '60px',
       },
-      [theme.breakpoints.down('xs')]: {
-        formContainer: {
-          flexDirection: "column-reverse"
-        },
-        heading: {
-          fontSize: 'xxx-large'
-        },
-        image: {
-          height: '40px'
-        }
-
-      }
+      
 }));
